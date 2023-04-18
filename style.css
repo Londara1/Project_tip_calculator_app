@@ -201,7 +201,6 @@ button:hover {
 
 .secondInputHead {
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
@@ -212,6 +211,7 @@ button:hover {
     line-height: 24px;
     color: #E17457;
     text-align: right;
+    margin-top: 32px;
 }
 
 @media (min-width: 1440px) {
@@ -233,7 +233,7 @@ button:hover {
         padding: 0;
     }
 
-    .marginText {
+    .marginText, .error {
         margin-top: 40px;
     }
 
