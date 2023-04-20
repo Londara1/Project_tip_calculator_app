@@ -61,13 +61,13 @@ function billInputFun() {
     } else {
         billError.style.display = "none";
         billInput.style.outline = "none";
+        calculateTip();
     }
 }
 
 
 function peopleInputFun() {
     peopleValue = parseFloat(peopleInput.value);
-    calculateTip();
 
     if (peopleValue < 1) {
         error.style.display = "flex";
@@ -118,10 +118,8 @@ function calculateTip() {
 
 function reset(){
     billInput.value = "";
-    billInputFun();
     peopleInput.value = "";
     peopleInputFun();
-    tipCustom.value = "";
     tips.forEach(function (val){
         val.classList.remove("active");
     });
