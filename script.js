@@ -28,7 +28,6 @@ billInput.addEventListener("keydown", function(event) {
     if (event.key === "-") {
         event.preventDefault();
     }
-    console.log(billInput.value);
     if (billInput.value.length == 1 && billInput.value.startsWith("0")) {
         billInput.value = "";
     }
@@ -38,11 +37,17 @@ peopleInput.addEventListener("keydown", function(event) {
     if (event.key === "-") {
         event.preventDefault();
     }
+    if (peopleInput.value.length == 1 && peopleInput.value.startsWith("0")) {
+        peopleInput.value = "";
+    }
 });
 
 tipCustom.addEventListener("keydown", function(event) {
     if (event.key === "-") {
         event.preventDefault();
+    }
+    if (tipCustom.value.length == 1 && tipCustom.value.startsWith("0")) {
+        tipCustom.value = "";
     }
 });
 
