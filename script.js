@@ -6,6 +6,7 @@ let totalPerPerson = document.querySelector(".totalAmount");
 let tips = document.querySelectorAll("#tips");
 let resetButton = document.querySelector(".resetButton");
 let error = document.querySelector(".error");
+let billError = document.querySelector(".billError");
 
 
 tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
@@ -18,14 +19,44 @@ tipCustom.addEventListener("input", tipInputFun);
 resetButton.addEventListener("click", reset);
 
 
-let billValue;
-let peopleValue;
-let tipValue;
+let billValue = 0;
+let peopleValue = 0;
+let tipValue = 0;
 
+
+billInput.addEventListener("keydown", function(event) {
+    if (event.key === "-") {
+        event.preventDefault();
+    }
+    console.log(billInput.value);
+    if (billInput.value.length == 1 && billInput.value.startsWith("0")) {
+        billInput.value = "";
+    }
+});
+
+peopleInput.addEventListener("keydown", function(event) {
+    if (event.key === "-") {
+        event.preventDefault();
+    }
+});
+
+tipCustom.addEventListener("keydown", function(event) {
+    if (event.key === "-") {
+        event.preventDefault();
+    }
+});
 
 
 function billInputFun() {
     billValue = parseFloat(billInput.value);
+
+    if (billValue < 1) {
+        billError.style.display = "flex";
+        billInput.style.outline = "2px solid #E17052"
+    } else {
+        billError.style.display = "none";
+        billInput.style.outline = "none";
+    }
 }
 
 

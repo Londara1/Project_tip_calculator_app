@@ -54,7 +54,7 @@ body {
     outline: none;
     text-align: right;
     caret-color: transparent;
-    padding-right: 17px;
+    padding: 0px 17px 0px 40px;
 }
 
 .billInput:focus {
@@ -133,7 +133,7 @@ button:hover {
     background-image: url(./images/icon-person.svg);
     background-repeat: no-repeat;
     border-radius: 5px;
-    padding-right: 17px;
+    padding: 0px 17px 0px 40px;
     background-position: 20px;
     width: 100%;
     border: none;
@@ -204,7 +204,7 @@ button:hover {
     justify-content: space-between;
 }
 
-.error {
+.error, .billError {
     display: none;
     font-weight: 700;
     font-size: 16px;
@@ -213,6 +213,17 @@ button:hover {
     text-align: right;
     margin-top: 32px;
 }
+
+.billError {
+    margin-top: 0px;
+}
+
+.billAndError {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 @media (min-width: 1440px) {
     body {
